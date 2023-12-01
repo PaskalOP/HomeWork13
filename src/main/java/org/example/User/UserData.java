@@ -1,5 +1,8 @@
 package org.example.User;
 
+import lombok.Data;
+
+@Data
 public class UserData {
 
     private int id;

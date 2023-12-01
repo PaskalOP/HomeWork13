@@ -16,7 +16,7 @@ public class Main {
 
         System.out.println("Hello world!");
         UserData user = new UserData();
-         user.setId(11);
+         user.setId(10);
          user.setName("Clementina DuBuque");
          user.setUsername("Moriah.Stanton");
          user.setEmail("Rey.Padberg@karina.biz");
@@ -28,21 +28,13 @@ public class Main {
          Gson gson = new GsonBuilder().setPrettyPrinting().create();
         // System.out.println(gson.toJson(user));
 
-        WriteUserToURL userToUrl = new WriteUserToURL(user);
+        WriteUserToURL userToUrl = new WriteUserToURL(gson);
         userToUrl.writeUser();
-        user.setName("Vasya");
-        userToUrl.ChangeUser();
-
-
-        String text = Jsoup.connect("https://jsonplaceholder.typicode.com/users")
-                //.header("Content-Type", "application/json")
-                .ignoreContentType(true)
-                .get()
-                .body()
-                .text();
-
-        System.out.println(text);
-
+        userToUrl.ChangeOrDeleteUser(9,"PUT");
+        userToUrl.ChangeOrDeleteUser(9,"DELETE");
+        userToUrl.getUsers(0); //all users
+        userToUrl.getUsers(3); //user with id
+        userToUrl.getUsersForUserName("Antonette");
     }
 
 }
