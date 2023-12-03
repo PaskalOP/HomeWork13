@@ -1,10 +1,7 @@
 package org.example;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import org.example.User.UserData;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -12,12 +9,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class WriteUserToURL {
+public class DataFromURL {
     //private UserData userData;
     private Gson user;
    // private URL url;
 
-    public WriteUserToURL(Gson user) {
+    public DataFromURL(Gson user) {
         this.user = user;
     }
     public void writeUser() {
